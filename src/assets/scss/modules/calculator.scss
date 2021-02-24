@@ -1,0 +1,127 @@
+.calculator {
+    border: 1px solid #c0c2c4;
+    margin: 100px auto 0;
+
+    width: 100%;
+    max-width: 316px;
+    min-height: 368px;
+    overflow: hidden;
+
+    font-size: 13px;
+
+    &__title {
+        padding: 15px 23px 11px;
+        border-bottom: 1px solid #c0c2c4;
+    }
+
+    &__form {
+        padding: 20px 22px 20px 28px;
+    }
+
+    &__form-status {
+        margin-top: 10px;
+        font-weight: 700;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        &_multiplication {
+            .calculator__input {
+                max-width: 50px;
+            }
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: 7px;
+        }
+
+        &_middle-bottom-indent {
+            margin-bottom: 13px !important;
+        }
+    }
+
+    &__input {
+        height: 100%;
+        max-width: 128px;
+        border: 1px solid #c0c2c4;
+        padding: 5px 7px 5px 20px;
+        border-radius: 3px;
+        text-align: right;
+        transition: .3s linear;
+
+        &.error {
+            border: 1px solid #e64545;
+        }
+
+        &_icon-dollar {
+            &:before {
+                content: '$';
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 10px;
+            }
+        }
+
+        &:disabled  {
+            opacity: 0.5;
+
+            &+ .input-counter {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__error {
+        display: block;
+        padding: 6px 8px;
+        line-height: 1.5;
+        font-size: 11px;
+        color: #fff;
+        width: 128px;
+        background: #e64545;
+        border-radius: 3px;
+        position: absolute;
+        right: 0;
+        bottom: calc(100% + 5px);
+
+        &:after {
+            content: ''; 
+            position: absolute;
+            left: 8px;
+            bottom: -9px;
+            border: 5px solid transparent;
+            border-top: 5px solid #e64545; 
+       }
+    }
+
+    &__icon {
+        color: #a2a4a6;
+        position: absolute;
+        right: 112px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    &__multiplication {
+        color: #909294;
+        margin-left: 5px;
+        white-space: nowrap;
+    }
+
+    &__inner {
+        width: 128px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__dropdown {
+        margin-top: 27px;
+    }
+}

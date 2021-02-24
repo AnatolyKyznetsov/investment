@@ -1,0 +1,24 @@
+.input-counter {
+    width: 17px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    height: 94%;
+    background: #fdfefe url('/img/icons/counter_buttons.svg') no-repeat center;
+    border-left: 1px solid #c0c2c4;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &__btn {
+        height: 50%;
+        transition: .1s linear;
+
+        &:first-child {
+            border-bottom: 1px solid #c0c2c4;
+        }
+
+        &:hover {
+            background: rgba(253,254,254,.5);
+        }
+    }
+}

@@ -1,0 +1,90 @@
+.buttons-group {
+    margin-top: 21px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    cursor: pointer;
+    width: 128px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: .3s linear;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 100%;
+        background: url('/img/icons/arrow_down.svg') no-repeat center;
+    }
+
+    span {
+        transition: .3s linear;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        max-width: 98px;
+        height: 100%;
+        width: 100%;  
+    }
+
+    &_green {
+        background: #499c38;
+
+        &:before {
+            transform: scale(1,-1);
+        }
+
+        span {
+            background: #53a642;
+        }
+
+        &:hover {
+            background: #388529;
+            box-shadow: 0px 1px 0px #1c4214;
+            transform: translateY(-1px);
+
+            span {
+                background: #499c38;
+            }
+        }
+
+        &:active {
+            transform: translateY(1px);
+            box-shadow: 0px 0px 0px #1c4214;
+        }
+    }
+
+    &_red {
+        background: #e95f5f;
+
+        span {
+            background: #f26666;
+        }
+
+        &:hover {
+            background: #f45151;
+            transform: translateY(-1px);
+            box-shadow: 0px 1px 0px #b54f4f;
+
+            span {
+                background: #e95f5f;
+            }
+        }
+
+        &:active {
+            transform: translateY(1px);
+            box-shadow: 0px 0px 0px #b54f4f;
+        }
+    }
+}
